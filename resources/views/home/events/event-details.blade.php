@@ -51,5 +51,6 @@
         </div>
     </div>
 </section>
+@include('home.social-media')
 @include('home.footer-files')
 @endsection

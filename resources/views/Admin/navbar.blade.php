@@ -16,6 +16,9 @@
         </div>
         <!--== NOTIFICATION ==-->
         <div class="col-md-2 tab-hide">
+            <div class="top-not-cen">
+                <a class="waves-effect btn-noti" href="/messages" title="all enquiry messages"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
+            </div>
         </div>
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">

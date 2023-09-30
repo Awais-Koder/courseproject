@@ -35,6 +35,7 @@
             @endforeach
         </div>
     </div>
+    @include('home.social-media')
 </section>
 @include('home.footer-files')
 @endsection

@@ -94,5 +94,6 @@
         </div>
     </div>
 </div>
+@include('home.social-media')
 @include('home.footer-files')
 @endsection

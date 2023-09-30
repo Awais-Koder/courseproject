@@ -51,4 +51,5 @@
 
         </div>
     </section>
+    @include('home.social-media')
 @endsection

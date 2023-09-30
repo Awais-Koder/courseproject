@@ -3,6 +3,7 @@
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\CourseContentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EventController;
@@ -73,9 +74,19 @@ Route::post('/profile/create' , [ProfileController::class , 'create']);
 Route::get('/user/dashboard' , [ProfileController::class , 'showDashboard']);
 Route::get('/open/dashboard' , [ProfileController::class , 'dashboard']);
 
+
 Route::controller(CertificateController::class)->group(function(){
     Route::get('/check/certificate' , 'check');
     Route::get('/validate/certificate' , 'validateCertificate');
+});
+
+Route::controller(ContactUsController::class)->group(function(){
+    Route::get('/contact/us' , 'index');
+    Route::post('/store/message' , 'store');
+});
+
+Route::get('/about/us', function(){
+    return view('home.about.about');
 });
 
 Route::middleware(['isAdmin'])->group(function() {
@@ -186,13 +197,16 @@ Route::middleware(['isAdmin'])->group(function() {
     });
     // ***************ending files course routes***********
 
-    // ***************starting address routes***********
+    // ***************starting certificate routes***********
     Route::controller(CertificateController::class)->group(function(){
         Route::get('/issue/certificate' , 'create');
         Route::post('/store/certificate' , 'store');
     });
-    // ***************ending files course routes***********
+    // ***************ending certificate routes***********
 
+    Route::get('/messages' , [ContactUsController::class , 'show']);
+    Route::get('view/message/{id}' , [ContactUsController::class , 'view']);
+    Route::get('delete/message/{id}' , [ContactUsController::class , 'delete']);
 
 });
 
